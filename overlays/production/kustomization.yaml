@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# ArgoCD syncs this directory. `namespace` here is applied to every
+# resource below, including the backend/ and frontend/ sub-overlays.
+namespace: student-app
+
+resources:
+  - ../../base/mongodb
+  - backend
+  - frontend
+
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: opsera-mid-project
+      app.kubernetes.io/managed-by: argocd
+    includeSelectors: false

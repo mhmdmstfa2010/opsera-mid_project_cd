@@ -1,0 +1,25 @@
+# Apply ONCE (or let your App-of-Apps do it). ArgoCD then watches this
+# repository: the CI `update-manifest` job bumps newTag and pushes, and
+# ArgoCD rolls the deployment out to the matching image digest.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opsera-mid-project
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mhmdmstfa2010/mid_project_cd.git
+    targetRevision: main
+    path: overlays/production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: student-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

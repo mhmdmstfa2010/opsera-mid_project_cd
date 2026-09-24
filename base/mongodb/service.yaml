@@ -1,0 +1,15 @@
+# Hostname MUST stay `mongodb` — backend/src/main/resources/application.properties
+# connects to spring.data.mongodb.host=mongodb.
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  labels:
+    app.kubernetes.io/name: mongodb
+spec:
+  selector:
+    app.kubernetes.io/name: mongodb
+  ports:
+    - name: mongodb
+      port: 27017
+      targetPort: mongodb
