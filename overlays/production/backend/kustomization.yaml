@@ -9,4 +9,4 @@ images:
     # Replace mohamed710 with your Docker Hub namespace
     # (the same value as the mohamed710 repo variable).
     newName: docker.io/mohamed710/backend
-    newTag: 0.0.1 # CI rewrites this line: sed -i "s#newTag: .*#newTag: <git-sha>#"
+    newTag: e760ef6651cacb3118e61c06247f041a0f94cc21
