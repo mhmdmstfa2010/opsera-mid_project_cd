@@ -6,7 +6,7 @@ resources:
 
 images:
   - name: backend
-    # Replace DOCKERHUB_NAMESPACE with your Docker Hub namespace
-    # (the same value as the DOCKERHUB_NAMESPACE repo variable).
-    newName: docker.io/DOCKERHUB_NAMESPACE/backend
+    # Replace mohamed710 with your Docker Hub namespace
+    # (the same value as the mohamed710 repo variable).
+    newName: docker.io/mohamed710/backend
     newTag: 0.0.1 # CI rewrites this line: sed -i "s#newTag: .*#newTag: <git-sha>#"
