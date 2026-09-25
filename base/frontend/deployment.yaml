@@ -20,7 +20,11 @@ spec:
           image: frontend:0.0.1
           ports:
             - name: http
-              containerPort: 3000
+              # nginx serves the SPA on 8080 inside the container: the
+              # unprivileged port lets the pod run under OpenShift's arbitrary
+              # UID. The Service is unchanged (port 3000 -> this named port),
+              # and the probes below follow it automatically.
+              containerPort: 8080
           readinessProbe:
             httpGet:
               path: /
