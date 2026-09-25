@@ -16,7 +16,7 @@ spec:
     path: overlays/production
   destination:
     server: https://kubernetes.default.svc
-    namespace: student-app
+    namespace: devsecops-app
   syncPolicy:
     automated:
       prune: true
