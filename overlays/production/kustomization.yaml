@@ -3,7 +3,7 @@ kind: Kustomization
 
 # ArgoCD syncs this directory. `namespace` here is applied to every
 # resource below, including the backend/ and frontend/ sub-overlays.
-namespace: student-app
+namespace: devsecops-app
 
 resources:
   - ../../base/mongodb
