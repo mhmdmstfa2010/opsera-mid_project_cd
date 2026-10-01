@@ -24,7 +24,7 @@ spec:
               # unprivileged port lets the pod run under OpenShift's arbitrary
               # UID. The Service is unchanged (port 3000 -> this named port),
               # and the probes below follow it automatically.
-              containerPort: 8089
+              containerPort: 8080
           readinessProbe:
             httpGet:
               path: /
