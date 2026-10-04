@@ -9,4 +9,4 @@ images:
     # Replace mohamed710 with your Docker Hub namespace
     # (the same value as the mohamed710 repo variable).
     newName: docker.io/mohamed710/frontend
-    newTag: 29259cd6a78a06860f71eeb755d421d7b687e9d1
+    digest: sha256:29e99619d69c86b253dbb89410321dc305b93b7df4b8d9421a7aa1bae115fa52
